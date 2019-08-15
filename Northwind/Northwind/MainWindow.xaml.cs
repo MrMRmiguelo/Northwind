@@ -35,6 +35,7 @@ namespace Northwind
                 {
                     Customers cust = new Customers();
 
+                    cust.CustomerID = txtCustomerID.Text;
                     cust.CompanyName = txtCompany.Text;
                     cust.ContactName = txtContacto.Text;
                     cust.ContactTitle = txtTContacto.Text;
@@ -65,20 +66,48 @@ namespace Northwind
 
         private void BtnModificar_Click(object sender, RoutedEventArgs e)
         {
+            if (txtCompany.Text != "" && txtContacto.Text != "" && txtTContacto.Text != "" && txtTelefono.Text != "" && txtDireccion.Text != "" && txtCiudad.Text != "" && txtRegion.Text != "" && txtPostal.Text != "" && txtPais.Text != "" && txtFax.Text != "")
+            {
 
+                var update = dc.Customers.FirstOrDefault(up => up.Phone.Equals(txtTelefono.Text));
+               
+                update.CompanyName = txtCompany.Text;
+                update.ContactName = txtContacto.Text;
+                update.ContactTitle = txtTContacto.Text;
+                update.Address = txtDireccion.Text;
+                update.City = txtCiudad.Text;
+                update.Region = txtRegion.Text;
+                update.PostalCode = txtPostal.Text;
+                update.Country = txtPais.Text;
+                update.Phone = txtTelefono.Text;
+                update.Fax = txtFax.Text;
+                try
+                {
+                    dc.SubmitChanges();
+                    MessageBox.Show("Registro actualizado con exito");
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+
+
+                
+            }
         }
 
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtTelefono.Text != "")
+            if (txtCustomerID.Text != "")
             {
                 var comida = (from com in dc.Customers
-                                where com.Phone == txtTelefono.Text
+                                where com.CustomerID == txtCustomerID.Text
                                 select com).FirstOrDefault();
                 if (comida != null)
                 {
                     var eliminar = from elim in dc.Customers
-                                   where elim.Phone.Equals(txtTelefono.Text)
+                                   where elim.CustomerID.Equals(txtCustomerID.Text)
                                    select elim;
                     foreach (var detalles in eliminar)
                     {
@@ -97,7 +126,7 @@ namespace Northwind
                     }
                 }
                 else
-                    MessageBox.Show("Para eliminar escriba un numero de telefono"); txtTelefono.Focus();
+                    MessageBox.Show("Para eliminar escriba un numero de ID Valido"); txtCustomerID.Focus();
             }
             else
                 MessageBox.Show("No existe registo con ese nombre");
@@ -112,6 +141,7 @@ namespace Northwind
 
         private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
         {
+            txtCustomerID.Text = "";
         txtCompany.Text = "";
         txtContacto.Text = "";
         txtTContacto.Text = "";
@@ -122,6 +152,12 @@ namespace Northwind
             txtPostal.Text = "";
             txtPais.Text = "";
             txtFax.Text = "";
+        }
+
+        private void BtnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+            
         }
     }
 }

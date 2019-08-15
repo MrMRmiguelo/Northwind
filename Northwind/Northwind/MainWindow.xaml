@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Northwind"
         mc:Ignorable="d"
-        Title="MainWindow" Height="554" Width="576">
-    <Grid Background="Black" Margin="0,0,2,-31">
+        Title="MainWindow" Height="587" Width="572">
+    <Grid Background="Black" Margin="0,0,-8,-2">
         <Label Content="Nombre Compañia" Foreground="White" HorizontalAlignment="Left" Margin="55,90,0,0" VerticalAlignment="Top"/>
         <Label Content="Titulo Contacto" Foreground="White" HorizontalAlignment="Left" Margin="55,202,0,0" VerticalAlignment="Top"/>
         <Label Content="Nombre Contacto" Foreground="White" HorizontalAlignment="Left" Margin="55,150,0,0" VerticalAlignment="Top"/>
@@ -15,10 +15,11 @@
         <Label Content="Codigo Postal" Foreground="White" HorizontalAlignment="Left" Margin="228,206,0,0" VerticalAlignment="Top"/>
         <Label Content="Fax" Foreground="White" HorizontalAlignment="Left" Margin="402,149,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.593,0.5"/>
         <Label Content="Telefono" Foreground="White" HorizontalAlignment="Left" Margin="402,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="CustomerID" Foreground="White" HorizontalAlignment="Left" Margin="402,202,0,0" VerticalAlignment="Top"/>
         <Label Content="Pais" Foreground="White" HorizontalAlignment="Left" Margin="228,263,0,0" VerticalAlignment="Top"/>
         <Label Content="Region" Foreground="White" HorizontalAlignment="Left" Margin="228,149,0,0" VerticalAlignment="Top"/>
         <Border Background="DarkGray"  BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="566"/>
-        <Border Background="DarkGray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Height="69" VerticalAlignment="Top" Width="566" Margin="0,485,0,0"/>
+        <Border Background="DarkGray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Height="69" VerticalAlignment="Top" Width="566" Margin="0,489,0,0"/>
         <TextBox Name="txtCompany" HorizontalAlignment="Left" Height="24" Margin="55,121,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtContacto" HorizontalAlignment="Left" Height="22" Margin="55,175,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.212,0.659"/>
         <TextBox Name="txtTContacto" HorizontalAlignment="Left" Height="22" Margin="55,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -29,11 +30,12 @@
         <TextBox Name="txtPais" HorizontalAlignment="Left" Height="23" Margin="228,289,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtFax" HorizontalAlignment="Left" Height="23" Margin="402,174,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtTelefono" HorizontalAlignment="Left" Height="22" Margin="402,121,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Button Content="Agregar" Name="btnAgragar" Click="BtnAgragar_Click" HorizontalAlignment="Left" Margin="55,362,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Modificar" Name="btnModificar" Click="BtnModificar_Click" HorizontalAlignment="Left" Margin="212,362,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-1.061,0.65"/>
-        <Button Content="Eliminar" Name="btnEliminar" Click="BtnEliminar_Click" HorizontalAlignment="Left" Margin="358,362,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Agregar" Name="btnAgragar" Click="BtnAgragar_Click" HorizontalAlignment="Left" Margin="24,398,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Modificar" Name="btnModificar" Click="BtnModificar_Click" HorizontalAlignment="Left" Margin="175,398,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-1.061,0.65"/>
+        <Button Content="Eliminar" Name="btnEliminar" Click="BtnEliminar_Click" HorizontalAlignment="Left" Margin="329,398,0,0" VerticalAlignment="Top" Width="100"/>
         <Button Content="Mostrar Lista" Name="btnMLista" Click="BtnMLista_Click" HorizontalAlignment="Left" Margin="212,444,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Limpiar" Name="btnLimpiar" Click="BtnLimpiar_Click" HorizontalAlignment="Left" Margin="402,232,0,0" VerticalAlignment="Top" Width="120" Height="34"/>
+        <Button Content="Limpiar" Name="btnLimpiar" Click="BtnLimpiar_Click" HorizontalAlignment="Left" Margin="402,343,0,0" VerticalAlignment="Top" Width="120" Height="34" RenderTransformOrigin="0.692,1.265"/>
+        <TextBox Name="txtCustomerID" HorizontalAlignment="Left" Height="23" Margin="402,232,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
 
 
     </Grid>
