@@ -47,7 +47,7 @@ namespace Northwind
                     cust.Fax = txtFax.Text;
                     dc.Customers.InsertOnSubmit(cust);
                     dc.SubmitChanges();
-                    MessageBox.Show("Se Agrego Correctamente")
+                    MessageBox.Show("Se Agrego Correctamente");
 
                 }
                 else
@@ -56,6 +56,10 @@ namespace Northwind
 
                 }
 
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
             }
 
@@ -66,17 +70,58 @@ namespace Northwind
 
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
+            if (txtTelefono.Text != "")
+            {
+                var comida = (from com in dc.Customers
+                                where com.Phone == txtTelefono.Text
+                                select com).FirstOrDefault();
+                if (comida != null)
+                {
+                    var eliminar = from elim in dc.Customers
+                                   where elim.Phone.Equals(txtTelefono.Text)
+                                   select elim;
+                    foreach (var detalles in eliminar)
+                    {
+                        dc.Customers.DeleteOnSubmit(detalles);
+                    }
+                    try
+                    {
+                        dc.SubmitChanges();
+                        MessageBox.Show("Registro eliminado con exito");
+                        
+                    }
+                    catch (Exception ex)
+                    {
 
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else
+                    MessageBox.Show("Para eliminar escriba un numero de telefono"); txtTelefono.Focus();
+            }
+            else
+                MessageBox.Show("No existe registo con ese nombre");
         }
+    
 
         private void BtnMLista_Click(object sender, RoutedEventArgs e)
         {
-
+            Listado lis = new Listado();
+            lis.ShowDialog();
         }
 
         private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
         {
-
+        txtCompany.Text = "";
+        txtContacto.Text = "";
+        txtTContacto.Text = "";
+        txtDireccion.Text = "";
+        txtTelefono.Text = "";
+            txtCiudad.Text = "";
+            txtRegion.Text = "";
+            txtPostal.Text = "";
+            txtPais.Text = "";
+            txtFax.Text = "";
         }
     }
 }

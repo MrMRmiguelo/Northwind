@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="554" Width="576">
     <Grid Background="Black" Margin="0,0,2,-31">
-        <Label Content="Nombre Compañia" Foreground="White"  HorizontalAlignment="Left" Margin="55,89,0,0" VerticalAlignment="Top" Height="32" Width="120"/>
+        <Label Content="Nombre Compañia" Foreground="White" HorizontalAlignment="Left" Margin="55,90,0,0" VerticalAlignment="Top"/>
         <Label Content="Titulo Contacto" Foreground="White" HorizontalAlignment="Left" Margin="55,202,0,0" VerticalAlignment="Top"/>
         <Label Content="Nombre Contacto" Foreground="White" HorizontalAlignment="Left" Margin="55,150,0,0" VerticalAlignment="Top"/>
         <Label Content="Direccion" Foreground="White" HorizontalAlignment="Left" Margin="64,259,0,0" VerticalAlignment="Top"/>
